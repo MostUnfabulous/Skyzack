@@ -17,6 +17,7 @@
 package com.example.android.actionbarcompat.basic;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
@@ -27,6 +28,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,11 +51,16 @@ public class MainActivity extends ActionBarActivity {
         final
         ListView listview = (ListView) findViewById(R.id.listview);
         String[] values = new String[] {
-                "ndroid", "iPhone", "WindowsMobile",
-                "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-                "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-                "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-                "Android", "iPhone", "WindowsMobile" };
+                "Holden & Prescott", "Smart Green Energy Company", "Mulberry Financial Ltd",
+                "Perfect Prints", "Digital Transcendent Ltd", "Maincolour Print", "PJ Associates ", "AMT Associates ",
+                "The Underfloor Heating Company", "that Bar", "Johns School Of Motoring", "Dorsafe UK", "Silk Office Solutions", "A1 Solutions",
+                "Brows & Lashes ", "Zapimage Photography", "Tails n Paws Pet Services", "No Place Like Home -", "Screen-Mend ", "Cottage Street Garage ",
+                "Greenstyle Artificial Lawns ", "Voodoo Gym ", "Horner & Hudsons Ltd", "Smart Green Energy Company", "Mulberry Financial Ltd",
+                "Perfect Prints", "Digital Transcendent Ltd", "Maincolour Print", "AMT Associates ", "PJ Associates" ,
+                "The Underfloor Heating Company", "that Bar", "Johns School Of Motoring", "Dorsafe UK", "Silk Office Solutions", "A1 Solutions",
+                "Brows & Lashes ", "Zapimage Photography", "Tails n Paws Pet Services", "No Place Like Home -", "Screen-Mend ", "Cottage Street Garage ",
+                "Greenstyle Artificial Lawns ", "Voodoo Gym ", "Horner & Hudsons Ltd" };
+
 
         final ArrayList<String> list = new ArrayList<String>();
         for (int i = 0; i < values.length; ++i) {
@@ -61,6 +68,8 @@ public class MainActivity extends ActionBarActivity {
         }
         final StableArrayAdapter adapter = new StableArrayAdapter(this,
                 android.R.layout.simple_list_item_1, list);
+
+
         listview.setAdapter(adapter);
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -88,7 +97,8 @@ public class MainActivity extends ActionBarActivity {
         HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
 
         public StableArrayAdapter(Context context, int textViewResourceId,
-                                  List<String> objects) {
+                                  List<String> objects)
+        {
             super(context, textViewResourceId, objects);
             for (int i = 0; i < objects.size(); ++i) {
                 mIdMap.put(objects.get(i), i);

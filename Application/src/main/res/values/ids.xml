@@ -21,4 +21,6 @@
     -->
     <item name="menu_location" type="id"/>
     android:id="@+id/my_button"
+    android:id="@id/TextView"
+
 </resources>

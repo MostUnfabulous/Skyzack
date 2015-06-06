@@ -8,5 +8,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/listview"
         android:layout_gravity="center_horizontal"
-        android:focusableInTouchMode="false" />
+        android:focusableInTouchMode="false"
+        android:textFilterEnabled="false"
+        android:scrollingCache="true"
+        android:clickable="true"
+     android:textColor="@android:color/white" />
 </LinearLayout>

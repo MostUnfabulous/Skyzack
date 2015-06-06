@@ -1604,12 +1604,12 @@ containing a value of this type.
         public static final int left=0x7f080022;
         public static final int listMode=0x7f08000a;
         public static final int list_item=0x7f080037;
-        public static final int listview=0x7f080051;
+        public static final int listview=0x7f080052;
         public static final int menu_location=0x7f080005;
-        public static final int menu_refresh=0x7f080054;
-        public static final int menu_settings=0x7f080055;
+        public static final int menu_refresh=0x7f080055;
+        public static final int menu_settings=0x7f080056;
         public static final int middle=0x7f080027;
-        public static final int my_button=0x7f080053;
+        public static final int my_button=0x7f080054;
         public static final int never=0x7f08002b;
         public static final int none=0x7f08000f;
         public static final int normal=0x7f08000b;
@@ -1635,9 +1635,10 @@ containing a value of this type.
         public static final int start=0x7f080024;
         public static final int submit_area=0x7f08004e;
         public static final int tabMode=0x7f08000c;
-        public static final int text=0x7f080052;
+        public static final int text=0x7f080053;
         public static final int title=0x7f080039;
         public static final int top=0x7f080025;
+        public static final int tv=0x7f080051;
         public static final int up=0x7f080009;
         public static final int useLogo=0x7f080013;
         public static final int vertical=0x7f080015;
@@ -1671,9 +1672,10 @@ containing a value of this type.
         public static final int abc_search_dropdown_item_icons_2line=0x7f030014;
         public static final int abc_search_view=0x7f030015;
         public static final int abc_simple_dropdown_hint=0x7f030016;
-        public static final int listviewlayout=0x7f030017;
-        public static final int sample_main=0x7f030018;
-        public static final int support_simple_spinner_dropdown_item=0x7f030019;
+        public static final int customtextview=0x7f030017;
+        public static final int listviewlayout=0x7f030018;
+        public static final int sample_main=0x7f030019;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
