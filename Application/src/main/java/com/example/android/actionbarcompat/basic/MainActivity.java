@@ -16,11 +16,21 @@
 
 package com.example.android.actionbarcompat.basic;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * This sample shows you how to use ActionBarCompat to create a basic Activity which displays
@@ -34,54 +44,68 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sample_main);
+        setContentView(R.layout.listviewlayout);
+
+        final
+        ListView listview = (ListView) findViewById(R.id.listview);
+        String[] values = new String[] {
+                "ndroid", "iPhone", "WindowsMobile",
+                "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
+                "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
+                "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
+                "Android", "iPhone", "WindowsMobile" };
+
+        final ArrayList<String> list = new ArrayList<String>();
+        for (int i = 0; i < values.length; ++i) {
+            list.add(values[i]);
+        }
+        final StableArrayAdapter adapter = new StableArrayAdapter(this,
+                android.R.layout.simple_list_item_1, list);
+        listview.setAdapter(adapter);
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view,
+                                    int position, long id) {
+                final String item = (String) parent.getItemAtPosition(position);
+               // view.animate().setDuration(2000).alpha(0)
+               //         .withEndAction(new Runnable() {
+                //            @Override
+                //            public void run() {
+               //                 list.remove(item);
+                  //              adapter.notifyDataSetChanged();
+                 //               view.setAlpha(1);
+                         //   }
+                     //   });
+            }
+
+        });
     }
 
-    // BEGIN_INCLUDE(create_menu)
-    /**
-     * Use this method to instantiate your menu, and add your items to it. You
-     * should return true if you have added items to it and want the menu to be displayed.
-     */
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate our menu from the resources by using the menu inflater.
-        getMenuInflater().inflate(R.menu.main, menu);
+    private class StableArrayAdapter extends ArrayAdapter<String> {
 
-        // It is also possible add items here. Use a generated id from
-        // resources (ids.xml) to ensure that all menu ids are distinct.
-        MenuItem locationItem = menu.add(0, R.id.menu_location, 0, R.string.menu_location);
-        locationItem.setIcon(R.drawable.ic_action_location);
+        HashMap<String, Integer> mIdMap = new HashMap<String, Integer>();
 
-        // Need to use MenuItemCompat methods to call any action item related methods
-        MenuItemCompat.setShowAsAction(locationItem, MenuItem.SHOW_AS_ACTION_IF_ROOM);
-
-        return true;
-    }
-    // END_INCLUDE(create_menu)
-
-    // BEGIN_INCLUDE(menu_item_selected)
-    /**
-     * This method is called when one of the menu items to selected. These items
-     * can be on the Action Bar, the overflow menu, or the standard options menu. You
-     * should return true if you handle the selection.
-     */
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_refresh:
-                // Here we might start a background refresh task
-                return true;
-
-            case R.id.menu_location:
-                // Here we might call LocationManager.requestLocationUpdates()
-                return true;
-
-            case R.id.menu_settings:
-                // Here we would open up our settings activity
-                return true;
+        public StableArrayAdapter(Context context, int textViewResourceId,
+                                  List<String> objects) {
+            super(context, textViewResourceId, objects);
+            for (int i = 0; i < objects.size(); ++i) {
+                mIdMap.put(objects.get(i), i);
+            }
         }
 
-        return super.onOptionsItemSelected(item);
+        @Override
+        public long getItemId(int position) {
+            String item = getItem(position);
+            return mIdMap.get(item);
+        }
+
+        @Override
+        public boolean hasStableIds() {
+            return true;
+        }
+
     }
-    // END_INCLUDE(menu_item_selected)
+
 }

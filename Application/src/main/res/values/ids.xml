@@ -20,5 +20,5 @@
         Generate an id which can be used when the location menu item is added in MainActivity
     -->
     <item name="menu_location" type="id"/>
-
+    android:id="@+id/my_button"
 </resources>

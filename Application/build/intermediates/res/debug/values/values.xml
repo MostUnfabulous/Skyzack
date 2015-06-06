@@ -192,7 +192,7 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <!-- From: file:/C:/Users/Hayden/Documents/GitHub/Skyzack/Application/src/main/res/values/base-strings.xml -->
     <eat-comment/>
-    <string name="app_name">ActionBarCompat-Basic</string>
+    <string name="app_name">Skyzack</string>
     <string name="intro_message">
         <![CDATA[
         

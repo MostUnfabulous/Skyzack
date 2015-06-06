@@ -423,10 +423,12 @@ int id image 0x7f080035
 int id left 0x7f080022
 int id listMode 0x7f08000a
 int id list_item 0x7f080037
+int id listview 0x7f080051
 int id menu_location 0x7f080005
-int id menu_refresh 0x7f080051
-int id menu_settings 0x7f080052
+int id menu_refresh 0x7f080054
+int id menu_settings 0x7f080055
 int id middle 0x7f080027
+int id my_button 0x7f080053
 int id never 0x7f08002b
 int id none 0x7f08000f
 int id normal 0x7f08000b
@@ -452,6 +454,7 @@ int id split_action_bar 0x7f080008
 int id start 0x7f080024
 int id submit_area 0x7f08004e
 int id tabMode 0x7f08000c
+int id text 0x7f080052
 int id title 0x7f080039
 int id top 0x7f080025
 int id up 0x7f080009
@@ -483,8 +486,9 @@ int layout abc_screen_toolbar 0x7f030013
 int layout abc_search_dropdown_item_icons_2line 0x7f030014
 int layout abc_search_view 0x7f030015
 int layout abc_simple_dropdown_hint 0x7f030016
-int layout sample_main 0x7f030017
-int layout support_simple_spinner_dropdown_item 0x7f030018
+int layout listviewlayout 0x7f030017
+int layout sample_main 0x7f030018
+int layout support_simple_spinner_dropdown_item 0x7f030019
 int menu main 0x7f0c0000
 int string abc_action_bar_home_description 0x7f0a0000
 int string abc_action_bar_home_description_format 0x7f0a0001
